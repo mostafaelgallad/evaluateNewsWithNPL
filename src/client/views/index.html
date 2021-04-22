@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Evaluate News With NPL</title>
+   
+</head>
+<body>
+    <header>
+        <h4>Evaluate News With NPL</h4>       
+    </header>
+    <main>
+        <section>
+            <h3>Sentiment Analysis</h3>
+            <p>Enter an url for news or blog to get the Sentiment analysis result</p>
+            <form>
+                <input type="url" placeholder="Enter the URL here.." id="input_url"/>
+                <span class="url_error">Please enter a valid url</span>
+                <input type="submit" value="Submit" onclick="return Client.AnalyasBlog(event)"/> 
+            </form>
+        </section>
+        <section>
+            <strong>Results:</strong>
+            <div id="agreement"></div>
+            <div id="subjectivity"></div>
+            <div id="confidence"></div>
+            <div id="irony"></div>
+            <div id="score_tag"></div>
+        </section>
+    </main>
+    <footer>
+        <h4>Evaluate News With NPL</h4>
+    </footer>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+          // Use the window load event to keep the page load performant
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+          });
+        }
+        </script>
+</body>
+</html>
