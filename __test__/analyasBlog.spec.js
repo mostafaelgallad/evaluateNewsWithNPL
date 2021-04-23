@@ -1,6 +1,10 @@
-import { AnalyasBlog } from "../src/client/js/analyasBlog"
-
+'use strict';
+import {AnalyasBlog } from "../src/client/js/analyasBlog"
+import 'regenerator-runtime/runtime';
 describe("Testing the submit functionality", () => {
-    test("Testing the AnalyasBlog() function", () => {
-           expect(AnalyasBlog).toBeDefined();
-})});
+    it('should test async errors', async () =>  {    
+        let url = "https://jestjs.io/docs/asynchronous"    
+        await expect(AnalyasBlog).toBeDefined()
+    });
+});
+
